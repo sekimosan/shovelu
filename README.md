@@ -1,24 +1,58 @@
-# README
+# Shovelu しゃべりゅ
+  ## あなたと喋る あなたを深堀る
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column                 | Type        | Option                           |
+| ---------------------- | ----------- | -------------------------------- |
+| nickname               | string      | null :false                      |
+| user_name              | string      | null :false unique :true         |
+| email                  | string      | deviseを用いて実装                 |
+| encrypted_password     | string      | deviseを用いて実装                 |
+| gender                 | integer     | null :false ActiveHash           |
+| age                    | integer     | null :false ActiveHash           |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :topics, through: :user_topics
+- has_many :user_topics
+- has_many :comments
 
-* Configuration
+## topicsテーブル
 
-* Database creation
+| Column                 | Type        | Option                           |
+| ---------------------- | ----------- | -------------------------------- |
+| title                  | text        | null :false                      |
+| memo                   | text        |                                  |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :users, through: :user_topics
+- has_many :user_topics
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## user_topicsテーブル
 
-* ...
+| Column                 | Type        | Option                           |
+| ---------------------- | ----------- | -------------------------------- |
+| user                   | references  | foreign_key :true                |
+| topic                  | references  | foreign_key :true                |
+
+### Assocation
+
+- belongs_to :user
+- belongs_to :topic
+
+## commentsテーブル
+
+| Column                 | Type        | Option                           |
+| ---------------------- | ----------- | -------------------------------- |
+| comment                | text        |  null :false                     | 
+| topic                  | references  |  foreign_key :true               |
+| user                   | references  |  foreign_key :true               |
+
+### Association
+
+- belongs_to :user
+- belongs_to :topic
