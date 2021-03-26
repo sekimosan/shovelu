@@ -8,6 +8,8 @@ class User < ApplicationRecord
     validates :user_name, uniqueness: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i },length: {in: 8..12}
     validates :gender,:age
   end  
+  has_many :rooms
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender  
   belongs_to :age

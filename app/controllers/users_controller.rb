@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
-  def index
+  def edit
   end
+  def update
+  end  
 end
