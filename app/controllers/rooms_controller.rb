@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
   def create
+    @room = Room.create
   end
   def destory
   end        
