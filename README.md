@@ -5,12 +5,13 @@
 
 | Column                 | Type        | Option                           |
 | ---------------------- | ----------- | -------------------------------- |
-| nickname               | string      | null :false                      |
-| user_name              | string      | null :false unique :true         |
+| nickname               | string      | null: false                      |
+| user_name              | string      | null: false unique: true         |
 | email                  | string      | deviseを用いて実装                 |
 | encrypted_password     | string      | deviseを用いて実装                 |
-| gender                 | integer     | null :false ActiveHash           |
-| age                    | integer     | null :false ActiveHash           |
+| gender                 | integer     | null: false ActiveHash           |
+| age                    | integer     | null: false ActiveHash           |
+| profile                | text        | 
 
 ### Association
 
@@ -22,7 +23,7 @@
 
 | Column                 | Type        | Option                           |
 | ---------------------- | ----------- | -------------------------------- |
-| title                  | text        | null :false                      |
+| title                  | text        | null: false                      |
 | memo                   | text        |                                  |
 
 ### Association
@@ -36,8 +37,8 @@
 
 | Column                 | Type        | Option                           |
 | ---------------------- | ----------- | -------------------------------- |
-| user                   | references  | foreign_key :true                |
-| topic                  | references  | foreign_key :true                |
+| user                   | references  | foreign_key: true                |
+| topic                  | references  | foreign_key: true                |
 
 ### Assocation
 
@@ -48,9 +49,9 @@
 
 | Column                 | Type        | Option                           |
 | ---------------------- | ----------- | -------------------------------- |
-| comment                | text        |  null :false                     | 
-| topic                  | references  |  foreign_key :true               |
-| user                   | references  |  foreign_key :true               |
+| comment                | text        |  null: false                     | 
+| topic                  | references  |  foreign_key: true               |
+| user                   | references  |  foreign_key: true               |
 
 ### Association
 
