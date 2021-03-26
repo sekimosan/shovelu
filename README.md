@@ -15,9 +15,23 @@
 
 ### Association
 
-- has_many :topics, through: :user_topics
-- has_many :user_topics
+- has_many :topics, through: :user_rooms
+- has_many :user_rooms
+- has_many :rooms
 - has_many :comments
+
+## roomsテーブル
+
+| Column                 | Type        | Option                           |
+| ---------------------- | ----------- | -------------------------------- |
+| name                   | string      | null: false                      |
+
+### Association
+
+- has_many :user_rooms
+- has_many :users ,through: :user_rooms
+- has_many :comments
+- has_many :topics
 
 ## topicsテーブル
 
@@ -28,22 +42,23 @@
 
 ### Association
 
-- has_many :users, through: :user_topics
-- has_many :user_topics
+- has_many :users, through: :user_rooms
+- has_many :user_rooms
 - has_many :comments
+- belongs_to :topic
 
 
-## user_topicsテーブル
+## user_roomsテーブル
 
 | Column                 | Type        | Option                           |
 | ---------------------- | ----------- | -------------------------------- |
 | user                   | references  | foreign_key: true                |
-| topic                  | references  | foreign_key: true                |
+| room                   | references  | foreign_key: true                |
 
 ### Assocation
 
 - belongs_to :user
-- belongs_to :topic
+- belongs_to :room
 
 ## commentsテーブル
 
@@ -52,8 +67,10 @@
 | comment                | text        |  null: false                     | 
 | topic                  | references  |  foreign_key: true               |
 | user                   | references  |  foreign_key: true               |
+| room                   | references  |  foreign_key: true               |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :topic
+- belongs_to :room
