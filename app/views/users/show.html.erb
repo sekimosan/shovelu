@@ -1,0 +1,5 @@
+<h2>profile画面</h2>
+<%= @user.nickname %>
+<%= @user.gender.name %>
+<%= @user.profile %>
+<%= render "friends/follow_button", user: @user %>
