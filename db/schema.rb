@@ -14,8 +14,11 @@ ActiveRecord::Schema.define(version: 2021_03_29_065351) do
 
   create_table "friends", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "follow_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["follow_id"], name: "index_friends_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_friends_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
@@ -52,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_03_29_065351) do
   end
 
   add_foreign_key "friends", "users"
+  add_foreign_key "friends", "users", column: "follow_id"
   add_foreign_key "user_rooms", "rooms"
   add_foreign_key "user_rooms", "users"
 end
