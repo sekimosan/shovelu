@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! 
+  
   def edit
   end
   def update
@@ -8,4 +9,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end  
 
+  def destroy
+  end  
+
+  def search
+    @user = User.search(params[:user_name])  
+  end
+
+  
 end

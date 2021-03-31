@@ -1,0 +1,6 @@
+<h1>検索結果<h2>
+<div class="contents row">
+  <% @user.each do |user| %>
+    <%= render template: "users/show", locals: { user: user } %>
+  <% end %>
+</div>

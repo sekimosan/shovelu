@@ -14,8 +14,18 @@ class User < ApplicationRecord
   has_many :followings, through: :friends, source: :follow
   has_many :reverse_of_friends, class_name: "Friend",foreign_key: "follow_id"
   has_many :followers, through: :reverse_of_friends,source: :user
+
+  def self.search(search)
+    if search != " "
+      User.where(user_name: search)
+    else
+      User.all  
+    end 
+
+  end  
+      
   
-  #フォローする人が自分ではないか
+  #友達追加機能
   def follow(other_user)
     unless self == other_user
       self.friends.find_or_create_by(follow_id: other_user.id)
