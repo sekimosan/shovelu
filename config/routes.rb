@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get "search"
     end
   end  
-  resources :rooms, only: [:index,:new,:create,:destory]
   resources :friends, only: [:create, :destroy]
+  resources :rooms, only: [:index,:new,:create,:destory]
+  
 end

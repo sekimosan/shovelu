@@ -1,7 +1,6 @@
 <h2>profile画面</h2>
-<% @user.each do |user| %>
-  <%= user.nickname %>
-  <%= user.gender.name %>
-  <%= user.profile %>
-  <%= render "friends/follow_button", user: user %>
-<% end %>  
+  <%= @user.nickname %>
+  <%= @user.gender.name %>
+  <%= @user.profile %>
+  <%= render "friends/follow_button", user: @user %> 
+

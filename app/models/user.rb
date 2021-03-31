@@ -16,11 +16,9 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_friends,source: :user
 
   def self.search(search)
-    if search != " "
+    unless search == " "
       User.where(user_name: search)
-    else
-      User.all  
-    end 
+    end
 
   end  
       
@@ -33,8 +31,8 @@ class User < ApplicationRecord
   end
   
   def unfollow(other_user)
-    friend = self.friends.finf_by(follow_id: other_user.id)
-    friend.destory if friend
+    friend = self.friends.find_by(follow_id: other_user.id)
+    friend.destroy if friend
   end
   
   def following?(other_user)

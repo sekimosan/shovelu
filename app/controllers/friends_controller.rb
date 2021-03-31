@@ -1,4 +1,5 @@
 class FriendsController < ApplicationController
+  before_action :set_user
   def create
     following = current_user.follow(@user)
     if following.save
@@ -7,11 +8,12 @@ class FriendsController < ApplicationController
     else
       flash.now[:alert] = "ユーザーをフォロー出来ませんでした"
       redeirect_to @user
-    end    
+    end 
+  end     
 
-  def destory
+  def destroy
     following = current_user.unfollow(@user)
-    if following.destory
+    if following = " "
       flash[:success] = "ユーザーのフォローを解除しました"
       redirect_to @user
     else
@@ -21,7 +23,7 @@ class FriendsController < ApplicationController
   end
 
   private
-  def
-    @user = User.find(params[:friend][:follow_id])
+  def set_user
+    @user = User.find(params[:follow_id])
   end
 end  

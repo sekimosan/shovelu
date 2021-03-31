@@ -1,6 +1,12 @@
 <h1>検索結果<h2>
-<div class="contents row">
-  <% @user.each do |user| %>
-    <%= render template: "users/show", locals: { user: user } %>
-  <% end %>
+<div class="contents">
+  <% @user.each do |user|%>
+    <%= user.nickname %>
+    <%= user.gender.name %>
+    <%= user.profile %>
+    <%= render "friends/follow_button", user: user %>
+  <% end %>  
+
+  
+    <%#= render template: "users/show",locals: { user: @user } %>
 </div>
