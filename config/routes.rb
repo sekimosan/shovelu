@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       get "search"
     end
   end  
-  resources :friends, only: [:create, :destroy]
+  post 'follow/:id' => 'relationships#follow', as: 'follow'
+  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   resources :rooms, only: [:index,:new,:create,:destory]
   
 end
