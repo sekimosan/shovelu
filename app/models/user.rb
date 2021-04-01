@@ -36,13 +36,6 @@ class User < ApplicationRecord
   def follower?(user)
     follower_user.include?(user)
   end  
-
-  def macher?(user)
-    @loves = []
-    if user.following? && user.follower?
-      @loves << user
-    end  
-  end  
       
   
 
