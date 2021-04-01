@@ -18,10 +18,10 @@
       <div class='chat-room-form__field--right'>
         <%= "ここに友達テーブルから参照したユーザーを選択する記述" %>
         <select>
-          <option value="">チャットするユーザーを選択してください</option>
-          <% User.friend.all.each do |user| %>
-            <option><%= user.friend.name %></option>
-          <% end %>
+          <option value="">ルームに招待するユーザーを選択してください</option>
+          <% User.all.each do |user| %>
+            <option><%= user.nickname %></option>
+          <% end %>  
         </select>
       </div>
     </div>
