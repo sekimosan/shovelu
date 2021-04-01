@@ -10,10 +10,8 @@ class User < ApplicationRecord
   end  
   has_many :user_rooms
   has_many :rooms, through: :user_rooms
-  has_many :friends
-  has_many :followings, through: :friends, source: :follow
-  has_many :reverse_of_friends, class_name: "Friend",foreign_key: "follow_id"
-  has_many :followers, through: :reverse_of_friends,source: :user
+  
+  
 
   def self.search(search)
     unless search == " "
@@ -23,21 +21,6 @@ class User < ApplicationRecord
   end  
       
   
-  #友達追加機能
-  def follow(other_user)
-    unless self == other_user
-      self.friends.find_or_create_by(follow_id: other_user.id)
-    end
-  end
-  
-  def unfollow(other_user)
-    friend = self.friends.find_by(follow_id: other_user.id)
-    friend.destroy if friend
-  end
-  
-  def following?(other_user)
-    self.followings.include?(other_user)
-  end  
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender  
