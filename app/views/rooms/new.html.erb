@@ -27,6 +27,26 @@
             <% end %>  
           <% end %>  
         </select>
+        <select name = "room[user_ids][]">
+          <option value=" ">ルームに招待するユーザーを選択してください</option>
+          <% User.all.each do |user| %>
+            <% if current_user.following?(user) && current_user.follower?(user) %> 
+              <option value=<%= user.id %>>
+                <%= user.nickname %> 
+              </option>
+            <% end %>  
+          <% end %>  
+        </select>
+        <select name = "room[user_ids][]">
+          <option value=" ">ルームに招待するユーザーを選択してください</option>
+          <% User.all.each do |user| %>
+            <% if current_user.following?(user) && current_user.follower?(user) %> 
+              <option value=<%= user.id %>>
+                <%= user.nickname %> 
+              </option>
+            <% end %>  
+          <% end %>  
+        </select>
         <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
