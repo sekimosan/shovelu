@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
   def create
+    binding.pry
     @room = Room.create
   end
   def destory
