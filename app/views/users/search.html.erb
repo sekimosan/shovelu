@@ -1,0 +1,17 @@
+<h1>検索結果<h2>
+<div class="contents">
+  <% @user.each do |user|%>
+    <%= user.nickname %>
+    <%= user.gender.name %>
+    <%= user.profile %>
+    <% if current_user.following?(user) %>
+      <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
+    <% else %>
+      <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
+    <% end %>
+    
+  <% end %>  
+
+  
+    <%#= render template: "users/show",locals: { user: @user } %>
+</div>
