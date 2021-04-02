@@ -1,0 +1,12 @@
+<div class="topic">
+  <div class="topic_title">
+    <ul>
+      <li><%= @topic.title %></li>
+      <li><%= @topic.memo %></li>
+      <li><%= @topic.user.nickname %></li>
+    </ul>  
+  </div>
+</div>
+<div class="move_to_index">
+  <%= link_to "戻る",room_topics_path(@room)%>
+</div>  

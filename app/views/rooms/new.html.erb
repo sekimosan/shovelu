@@ -16,7 +16,6 @@
         <%= f.label :メンバー, class:'chat-room-form__label' %>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= "ここに友達テーブルから参照したユーザーを選択する記述" %>
         <select name = "room[user_ids][]">
           <option value=" ">ルームに招待するユーザーを選択してください</option>
           <% User.all.each do |user| %>

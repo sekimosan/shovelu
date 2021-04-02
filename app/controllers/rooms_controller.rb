@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to room_path(@room)
+      redirect_to root_path
     else
       render :new  
     end  
@@ -18,9 +18,6 @@ class RoomsController < ApplicationController
     room.destroy
     redirect_to root_path
   end       
-  def show
-    @room = Room.find(params[:id])
-  end   
 
   private
   def room_params

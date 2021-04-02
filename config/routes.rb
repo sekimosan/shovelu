@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end  
   post 'follow/:id' => 'relationships#follow', as: 'follow'
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
-  resources :rooms, only: [:index,:new,:create,:destory,:show]
+  resources :rooms, only: [:index,:new,:create,:destory,:show] do
+    resources :topics, only: [:index,:create,:destroy,:show]
+  end
   
 end

@@ -5,7 +5,7 @@
       <% current_user.rooms.each do |room| %>
         <div class="room">
           <div class="room-name">
-            <a href="#"><%= room.name %></a>
+            <%= link_to "#{room.name}", room_topics_path(room.id) %>
           </div>
         </div>
       <% end %>
