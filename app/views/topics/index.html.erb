@@ -2,7 +2,7 @@
   <h2>トピックを６つまで出してください</h2>
   <% @topics.each do |topic|%>
     <ul>
-       <li> <%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{@topic.id}" %></li>
+       <li><%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}" %></li>
     </ul>  
   <% end%>
 </div>

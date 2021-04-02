@@ -15,7 +15,7 @@ class TopicsController < ApplicationController
     end  
   end
   def show
-    @topic = @room.topic(params[:id])
+    @topic = @room.topics.find(params[:id])
   end  
   def destroy
     @topic = @room.topic(params[:id]).destroy
