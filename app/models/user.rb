@@ -8,6 +8,7 @@ class User < ApplicationRecord
     validates :user_name, uniqueness: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i },length: {in: 8..12}
     validates :gender,:age
   end  
+  has_one_attached :image
   has_many :user_rooms
   has_many :rooms, through: :user_rooms
   has_many :follower, class_name: "Relationship",foreign_key: "follower_id", dependent: :destroy
