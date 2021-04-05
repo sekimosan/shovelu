@@ -7,10 +7,11 @@ class TopicsController < ApplicationController
   end
   def create
     @topic = @room.topics.new(topic_params)
+    binding.pry
     if @topic.save
       redirect_to room_topics_path(@room)
     else 
-      flash[:alert] = "送信に失敗しました"
+      @topics = @room.topics.includes(:user)
       render :index
     end  
   end
