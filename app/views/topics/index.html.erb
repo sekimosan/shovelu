@@ -1,0 +1,22 @@
+<div class ="topics">
+  <h2>トピックを６つまで出してください</h2>
+  <% @topics.each do |topic|%>
+      <ul>
+         <li><%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}" %></li>
+      </ul>    
+ <% end%>
+</div>
+<div class ="new_topic">
+  <%= form_with model: [@room,@topic], class: "form", local: true do |f| %>
+    <%= render "shared/error_messages", model: f.object %>
+    <div class="form_input">
+      <ul>
+        <li><%= f.label  "どんなことを話したいですか？" %></li>
+        <li><%= f.text_field :title,placeholder: "タイトルを入力してください　例:行ってみたい国" %></li>
+        <li><%= f.label "追加で説明があれば書いてください" %>
+        <li><%= f.text_area :memo,placeholder: "例:1人旅で２週間の滞在だとしたら何持っていく？" %></li>
+      </ul>
+    </div>
+    <%= f.submit "送信",class: "form-submit" %>
+  <% end %>  
+</div>

@@ -15,9 +15,9 @@
 
 ### Association
 
-- has_many :topics, through: :user_rooms
+- has_many :rooms, through: :user_rooms
 - has_many :user_rooms
-- has_many :rooms
+- has_many :topics
 - has_many :comments
 
 ## roomsテーブル
@@ -39,13 +39,13 @@
 | ---------------------- | ----------- | -------------------------------- |
 | title                  | text        | null: false                      |
 | memo                   | text        |                                  |
-
+| room                   | references  | foreign_key: true
 ### Association
 
 - has_many :users, through: :user_rooms
 - has_many :user_rooms
 - has_many :comments
-- belongs_to :topic
+- belongs_to :room
 
 
 ## user_roomsテーブル
