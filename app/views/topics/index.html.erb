@@ -1,10 +1,10 @@
 <div class ="topics">
   <h2>トピックを６つまで出してください</h2>
   <% @topics.each do |topic|%>
-      <ul>
-         <li><%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}" %></li>
-      </ul>    
- <% end%>
+    <ul>
+      <li><%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}" %></li>
+    </ul>    
+  <% end %>
 </div>
 <div class ="new_topic">
   <%= form_with model: [@room,@topic], class: "form", local: true do |f| %>

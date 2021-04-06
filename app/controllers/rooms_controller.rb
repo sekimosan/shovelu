@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
   end
   def create
     @room = Room.new(room_params)
+    binding.pry
     if @room.save
       redirect_to root_path
     else
@@ -14,8 +15,11 @@ class RoomsController < ApplicationController
     end  
   end
   def destory
-    room = Room.find(params[:id])
-    room.destroy
+    @room = Room.find(params[:id])
+    unless @room.users.include?(current_user)
+      redirect_to root_path
+    end
+    @room.destroy
     redirect_to root_path
   end       
 
