@@ -10,6 +10,7 @@ body{
 
 .contents {
   margin: 20px 30px;
+  text-align: center;
 }
 
 .top-content {
@@ -53,7 +54,7 @@ body{
 .title {
   margin: 30px ;
   font-size: 25px;
-  border-bottom: 2px solid #0f0fff;
+  border-bottom: 2px solid #ca5532;
   display: inline-block;
   color: #666;
 
@@ -88,7 +89,7 @@ span {
 
 .search-form{
   margin-top: 40px;
-  border: 2px solid #0f0fff;
+  border: 2px solid #0673a8;
   display: inline-block;
   border-radius: 10px;
   padding: 10px 5px 3px;
@@ -109,18 +110,18 @@ span {
   color: silver;
 }
 .search_btn:hover{
-  color: #0f0fff;
+  color: #0673a8;
 }
 
 .btn-room a{ 
-  color: #0f0fff;
-  border: 2px solid #0f0fff;
+  color: #0673a8;
+  border: 2px solid #0673a8;
   border-radius: 10px;
   display: inline-block;
   padding: 10px 15px;
   font-size: 25px;
   opacity: 0.8;
-  box-shadow: 1px 7px #0f0fff;
+  box-shadow: 1px 7px #00608d;
 }
 .btn-room a:active {
   box-shadow: none;
@@ -129,4 +130,46 @@ span {
 }
 .btn-room {
   margin: 40px 0;
+}
+
+.room-name a{
+  text-decoration: none;
+  color: #666;
+  font-size: 20px;
+  
+}
+.room-name{
+  margin: 10px 0;
+  padding: 2px 10px;
+}
+.room-date{
+  color: #666;
+  border-bottom: 1px solid #aeaeae;
+  display: inline-block;
+}
+.room {
+  display: inline-block;
+  border: 2px solid #0673a8;
+  margin: 10px 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.room-delete {
+  font-size: 15px;
+  margin-top: 2px;
+  position:absolute;
+  top: 60px;
+  right: 5px;
+
+}
+.room-delete a{
+  color: #666;
+  text-decoration: none;
+  font-weight: bold;
+
+}
+.room-delete a:hover{
+  border: 1px solid #0673a8;
 }

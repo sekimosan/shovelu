@@ -38,13 +38,20 @@
         <%= link_to "ルームをつくる" ,new_room_path %>
       </div>  
     </div>  
-    <div class="rooms">
-      <div class="title">今までのルーム一覧</div> 
+    <div class="title">今までのルーム一覧</div> 
+    <div class="rooms"> 
         <% current_user.rooms.each do |room| %>
           <div class="room">
-            <%= link_to "#{room.name}", room_topics_path(room.id) %>
-            <%= link_to "削除","#" %>
-          </div>
+            <div class="room-date">
+              <%= room.created_at.to_s(:datetime_jp) %>
+            </div>
+            <div class="room-name">
+              <%= link_to "#{room.name}", room_topics_path(room.id) %>
+            </div>
+            <div class="room-delete">
+              <%= link_to "✖️","#" %>
+            </div>
+          </div>  
         <% end %>  
     </div>
       
