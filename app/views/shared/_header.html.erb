@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <div class="header-left">
+      <%= link_to "Shovelu" ,root_path ,class:"logo" %>
+    </div>
+    <div class="header-right">
+      <nav class="login-wrapper">
+        <% unless user_signed_in?%>
+        <div class="btn sign-up"><%= link_to '新規登録', new_user_registration_path %></div>
+        <div class="btn login"><%= link_to 'ログイン', new_user_session_path %></li>
+        <% else%>  
+        <div class="btn user"><span class="far fa-user"></span><%= link_to "#{current_user.nickname}さん" ,user_path(current_user.id) %></div>          <div class="btn logout"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></div>
+         <% end %>  
+      </nav>
+    </div>
+  </div>
+</header>

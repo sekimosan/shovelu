@@ -1,0 +1,57 @@
+header{
+  width: 100%;
+  padding: 20px;
+  opacity: 0.9;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #AEAEAE;
+}
+
+.logo:hover {
+  color: #666;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.login-wrapper {
+  display:flex;
+  
+}
+.btn {
+  border: 1px solid #aeaeae;
+  margin-right: 10px; 
+  border-radius: 8px;
+}
+.btn:hover {
+  border: 1px solid #666;
+}
+.btn a:hover {
+  color: #666;
+}
+.btn a {
+  color: #aeaeae;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+.fa-user {
+  color: #aeaeae;
+  font-size: 30px;
+  margin-left: 10px;
+}

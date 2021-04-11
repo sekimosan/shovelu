@@ -1,17 +1,48 @@
+<%= render "shared/header" %>
 <div class="main">
+  <div class="top-content">
+    <div class="top-intro">  
+      <h1>たまにしか会えない友人との大切な時間</br>近況報告で終わっていませんか？</h1>
+      <h1>Shoveluはちょっとだけ深いトークができるアプリです</h1>
+    </div>  
+  </div>  
   <div class="contents">
-    <div class="rooms">
-      <%= link_to "新規グループ作成" ,new_room_path, class: "new_group" %>
-      <% current_user.rooms.each do |room| %>
-        <div class="room">
-          <div class="room-name">
-            <%= link_to "#{room.name}", room_topics_path(room.id) %>
-          </div>
-        </div>
-      <% end %>
+    <div class="how_to">
+      <div class="title">How to Shovelu</div>
+      <p><span>1.</span>フレンドを探す</p>
+      <p>ユーザー検索から相手を探します</p>
+      <p>相互フォローになるとフレンドになれます</p>
+      <p><span>2.</span>フレンドとしゃべる</p>
+      <p>最大4人までルームをつくることが出来ます</p>
+      <p><span>3.</span>お題を出す</p>
+      <p>フレンドとしゃべるお題を6つ出しましょう</p>
+      <p><span>4.</span>どのお題をだれがしゃべるか決める</p>
+      <p>サイコロを振って決めましょう</p>
+      <p><span>5.</span>Let's Shovelu!</p>
     </div>
-    <%= form_with(url:  search_users_path, local: true,method: :get, class:"search-form") do |f| %>
-      <%= f.text_field :user_name, placeholder: "ユーザーネームを入力してください",class: "search_input" %>
-      <%= f.submit "検索", class: "search_btn" %>
-    <% end %>  
+    <div class="new-friends">
+      <div class="title">フレンドを探す</div>
+      <div class="form friends">
+        <%= form_with(url:  search_users_path, local: true,method: :get, class:"search-form") do |f| %>
+        <%= f.text_field :user_name, placeholder: "ユーザーネームを入力してください",class: "search_input" %>
+        <%= f.submit "検索", class: "search_btn" %>
+        <% end %>
+      </div>  
+    </div>
+    <div class="new-room">
+      <div class="title">フレンドとしゃべる</div>
+      <div class="btn new">
+        <%= link_to "ルームをつくる" ,new_room_path %>
+      </div>  
+    </div>  
+    <div class="rooms">
+      <div class="title">今までのルーム一覧</div>  
+        <% current_user.rooms.each do |room| %>
+          <div class="room">
+              <%= link_to "#{room.name}", room_topics_path(room.id) %>
+          </div>
+        <% end %>
+    </div>
+      
+  </div>  
 </div>
