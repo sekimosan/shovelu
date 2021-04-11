@@ -22,10 +22,13 @@
     </div>
     <div class="new-friends">
       <div class="title">フレンドを探す</div>
+      <p>フォローする人のユーザーネームを入れてください</p>
       <div class="form friends">
         <%= form_with(url:  search_users_path, local: true,method: :get, class:"search-form") do |f| %>
-        <%= f.text_field :user_name, placeholder: "ユーザーネームを入力してください",class: "search_input" %>
-        <%= f.submit "検索", class: "search_btn" %>
+          <%= f.text_field :user_name, class: "search_input" %>
+          <%= f.button  type: "submit", class: "search_btn" do %>
+            <i class="fas fa-search"></i>
+          <% end %>
         <% end %>
       </div>  
     </div>
@@ -36,12 +39,13 @@
       </div>  
     </div>  
     <div class="rooms">
-      <div class="title">今までのルーム一覧</div>  
+      <div class="title">今までのルーム一覧</div> 
         <% current_user.rooms.each do |room| %>
           <div class="room">
-              <%= link_to "#{room.name}", room_topics_path(room.id) %>
+            <%= link_to "#{room.name}", room_topics_path(room.id) %>
+            <%= link_to "削除","#" %>
           </div>
-        <% end %>
+        <% end %>  
     </div>
       
   </div>  

@@ -36,6 +36,10 @@ body{
   margin: 60px 0;
   text-align: center;
 }
+.new-friends p{
+  color: #666;
+  font-size: 20px;
+}
 .how_to{
   text-align: center;
 }
@@ -80,4 +84,30 @@ span {
   margin: 60px 0;
   
 
+}
+
+.search-form{
+  margin-top: 40px;
+  border: 2px solid silver;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px 5px 3px;
+  
+}
+
+.search_input{
+  height: 50px;
+  border-style: none;
+  padding: 3px 0;
+  
+}
+
+.search_btn{
+  font-size: 30px;
+  border: none;
+  background: none;
+  color: silver;
+}
+.search_btn:hover{
+  color: #0f0fff;
 }
