@@ -1,3 +1,175 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+}
+.main {
+  
+}
+
+.contents {
+  margin: 20px 30px;
+  text-align: center;
+}
+
+.top-content {
+  height: 100vh;
+  background-image: image-url("city-5772040_1280.jpg");
+  background-size: cover;
+  
+  
+}
+.top-intro {
+  width: 80vw;
+  margin: 0 auto;
+  display:block;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 20px;
+  opacity: 0.8;
+  padding: 70vh  0;
+  
+
+}
+
+.new-friends{
+  margin: 60px 0;
+  text-align: center;
+}
+.new-friends p{
+  color: #666;
+  font-size: 20px;
+}
+.how_to{
+  text-align: center;
+}
+
+.how_to p{
+  font-size: 16px;
+  text-align: center;
+  color: #666;
+}
+
+.title {
+  margin: 30px ;
+  font-size: 25px;
+  border-bottom: 2px solid #ca5532;
+  display: inline-block;
+  color: #666;
+
+  
+}
+span {
+  color:black;
+}
+
+
+.new{
+  margin-top: 40px;
+  border: 1px solid black;
+}
+
+.new-room{
+  text-align: center;
+}
+.new-room a {
+  text-decoration: none;
+  display: block;
+  color: black;
+  font-size: 30px;
+
+}
+.rooms {
+  text-align: center;
+  margin: 60px 0;
+  
+
+}
+
+.search-form{
+  margin-top: 40px;
+  border: 2px solid #0673a8;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px 5px 3px;
+  
+}
+
+.search_input{
+  height: 50px;
+  border-style: none;
+  padding: 3px 0;
+  
+}
+
+.search_btn{
+  font-size: 30px;
+  border: none;
+  background: none;
+  color: silver;
+}
+.search_btn:hover{
+  color: #0673a8;
+}
+
+.btn-room a{ 
+  color: #0673a8;
+  border: 2px solid #0673a8;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 25px;
+  opacity: 0.8;
+  box-shadow: 1px 7px #00608d;
+}
+.btn-room a:active {
+  box-shadow: none;
+  position: relative;
+  top: 7px;
+}
+.btn-room {
+  margin: 40px 0;
+}
+
+.room-name a{
+  text-decoration: none;
+  color: #666;
+  font-size: 20px;
+  
+}
+.room-name{
+  margin: 10px 0;
+  padding: 2px 10px;
+}
+.room-date{
+  color: #666;
+  border-bottom: 1px solid #aeaeae;
+  display: inline-block;
+}
+.room {
+  display: inline-block;
+  border: 2px solid #0673a8;
+  margin: 10px 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.room-delete {
+  font-size: 15px;
+  margin-top: 2px;
+  position:absolute;
+  top: 60px;
+  right: 5px;
+
+}
+.room-delete a{
+  color: #666;
+  text-decoration: none;
+  font-weight: bold;
+
+}
+.room-delete a:hover{
+  border: 1px solid #0673a8;
+}
