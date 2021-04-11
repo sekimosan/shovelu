@@ -53,7 +53,7 @@ body{
 .title {
   margin: 30px ;
   font-size: 25px;
-  border-bottom: 1px solid #0f0fff;
+  border-bottom: 2px solid #0f0fff;
   display: inline-block;
   color: #666;
 
@@ -88,7 +88,7 @@ span {
 
 .search-form{
   margin-top: 40px;
-  border: 2px solid silver;
+  border: 2px solid #0f0fff;
   display: inline-block;
   border-radius: 10px;
   padding: 10px 5px 3px;
@@ -110,4 +110,23 @@ span {
 }
 .search_btn:hover{
   color: #0f0fff;
+}
+
+.btn-room a{ 
+  color: #0f0fff;
+  border: 2px solid #0f0fff;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 25px;
+  opacity: 0.8;
+  box-shadow: 1px 7px #0f0fff;
+}
+.btn-room a:active {
+  box-shadow: none;
+  position: relative;
+  top: 7px;
+}
+.btn-room {
+  margin: 40px 0;
 }
