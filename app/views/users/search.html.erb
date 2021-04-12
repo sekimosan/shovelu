@@ -1,17 +1,35 @@
-<h1>検索結果<h2>
-<div class="contents">
-  <% @user.each do |user|%>
-    <%= user.nickname %>
-    <%= user.gender.name %>
-    <%= user.profile %>
-    <% if current_user.following?(user) %>
-      <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
-    <% else %>
-      <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
-    <% end %>
+<%= render "shared/header" %>
+<div class="main">
+  <h1 class="page-title red">ユーザー検索</h1>
+  <div class="contents">
+    <div class="friends-page">
+      <% @user.each do |user|%>
+        <div class="user-picture">
+        </div>
+        <div class="user-show name">
+          <%= user.nickname %>
+        </div>  
+        <div class="user-show">
+          <%= user.user_name %>
+        </div>
+        <div class="user-show">
+          <%= user.gender.name %>
+        </div>  
+        <div class="user-show"> 
+          <%= user.profile %>
+        </div>
+        <% unless current_user == user %>
+          <% if current_user.following?(user) %>
+            <%= link_to 'フォローを外す', unfollow_path(user.id), method: :POST,class: "follow-btn" %>
+          <% else %>
+            <%= link_to 'フォローする', follow_path(user.id), method: :POST ,class:"follow-btn" %>
+          <% end %>
+        <% end %>  
     
-  <% end %>  
+      <% end %>  
+    </div>  
 
   
     <%#= render template: "users/show",locals: { user: @user } %>
+  </div>
 </div>
