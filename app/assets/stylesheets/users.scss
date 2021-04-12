@@ -1,6 +1,11 @@
 .red {
   background-color: #f19ca7;
 }
+
+.green {
+  background-color: #a3d6cc;
+
+}
 .user-show{
   color: #666;
   font-size: 18px;
@@ -37,4 +42,29 @@
 
 }
 
+.your-page {
+  text-align: center;
+}
+
+.number{
+  margin: 10px 20px;
+  text-align: center;
+  color: #666;
+  display: flex;
+  justify-content: space-around;
+  p{
+    border-bottom: 2px solid #0673a8;
+  }
+}
+.ichi {
+  background-color: #e8ece9;
+}
+
+.s-btn {
+  text-decoration: none;
+  color: #666;
+  border: 2px solid #666;
+  padding: 1px 2px;
+  border-radius: 10px;
+}
 
