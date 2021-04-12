@@ -16,6 +16,12 @@
           <i class="fas fa-user-edit">編集</i> 
         <% end %>
       </div>
+    <% elsif user_signed_in? && current_user.id != @user.id %>  
+      <% if current_user.following?(user) %>
+        <%= link_to 'フォローを外す', unfollow_path(user.id), method: :POST,class: "follow-btn" %>
+      <% else %>
+        <%= link_to 'フォローする', follow_path(user.id), method: :POST ,class:"follow-btn" %>
+      <% end %>
     <% end %> 
 
   </div>
