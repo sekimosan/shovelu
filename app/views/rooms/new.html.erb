@@ -1,60 +1,57 @@
-<div class='chat-room-form'>
-  <h1>新規チャットルーム</h1>
-  <%=form_with model: @room, local: true do |f|%>
-    <%= render "shared/error_messages", model: f.object %>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :ルーム名, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
-      </div>
-    </div>
-    <div class='chat-room-form__field'>
-    </div>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :メンバー, class:'chat-room-form__label' %>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <select name = "room[user_ids][]">
-          <option value=" ">ルームに招待するユーザーを選択してください</option>
-          <% User.all.each do |user| %>
-            <% if current_user.following?(user) && current_user.follower?(user) %> 
-              <option value=<%= user.id %>>
-                <%= user.nickname %> 
-              </option>
+<%= render "shared/header" %>
+<div class='main'>
+  
+  <h1 class="page-title blue">新規ルーム作成</h1>
+  <div class="form">
+    <%= form_with model: @room, local: true do |f| %>
+      <%= render "shared/error_messages", model: f.object %>
+      <div class="new-room-name">
+        <p class="new-room-memo">ルームに名前をつけてください</p>
+        <%= f.text_field :name, class: 'new-room-input', placeholder: 'ルーム名'%>
+      </div>  
+      <div class="invite">
+        <p class="new-room-memo">参加するフレンドを選んでください</p>
+        <div class="select">
+          <select name = "room[user_ids][]">
+            <option value=" ">-----</option>
+            <% User.all.each do |user| %>
+              <% if current_user.following?(user) && current_user.follower?(user) %> 
+                <option value=<%= user.id %>>
+                  <%= user.nickname %> 
+                </option>
+              <% end %>  
             <% end %>  
-          <% end %>  
-        </select>
-        <select name = "room[user_ids][]">
-          <option value=" ">ルームに招待するユーザーを選択してください</option>
-          <% User.all.each do |user| %>
-            <% if current_user.following?(user) && current_user.follower?(user) %> 
-              <option value=<%= user.id %>>
-                <%= user.nickname %> 
-              </option>
+          </select>
+        </div>  
+        <div class="select">
+          <select name = "room[user_ids][]">
+            <option value=" ">-----</option>
+            <% User.all.each do |user| %>
+              <% if current_user.following?(user) && current_user.follower?(user) %> 
+                <option value=<%= user.id %>>
+                  <%= user.nickname %> 
+                </option>
+              <% end %>  
             <% end %>  
-          <% end %>  
-        </select>
-        <select name = "room[user_ids][]">
-          <option value=" ">ルームに招待するユーザーを選択してください</option>
-          <% User.all.each do |user| %>
-            <% if current_user.following?(user) && current_user.follower?(user) %> 
-              <option value=<%= user.id %>>
-                <%= user.nickname %> 
-              </option>
+          </select>
+        </div>  
+        <div class="select">
+          <select name = "room[user_ids][]">
+            <option value=" ">-----</option>
+            <% User.all.each do |user| %>
+                <% if current_user.following?(user) && current_user.follower?(user) %> 
+                  <option value=<%= user.id %>>
+                    <%= user.nickname %> 
+                  </option>
+                <% end %>  
             <% end %>  
-          <% end %>  
-        </select>
-        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
-      </div>
-    </div>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'></div>
-      <div class='chat-room-form__field--right'>
-        <%= f.submit class: 'chat-room-form__action-btn'%>
-      </div>
-    </div>
-  <% end %>
-</div>
+          </select>
+        </div>  
+      </div>  
+      <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      <%= f.submit class: 'room-create-btn'%>
+  
+    <% end %>
+  </div>  
+
+</div> 
