@@ -63,8 +63,13 @@
 .s-btn {
   text-decoration: none;
   color: #666;
-  border: 2px solid #666;
-  padding: 1px 2px;
-  border-radius: 10px;
+  font-size: 20px;
+  margin: 0 10px;
+  :hover{
+    color: #a3d6cc;
+  }
 }
 
+.follow {
+  border-bottom: 2px solid #0673a8;
+}
