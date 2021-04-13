@@ -3,15 +3,18 @@
   <div class="page-title yellow"><%= "#{@room.name}のお部屋"%></div>
   
   <div class ="topics">
-    <div class="memo">トピックを６つまで出してください</div>
-    <% @topics.each.with_index(1) do |topic,i|%>
-      <div class="topic">
-        <div class="num"><%= "#{i}." %></div>
-        <div class="topic-name">
-          <%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}" %>
-        </div>  
-      </div>   
+    <div class="topics-img">
+      <div class="memo">トピックを６つまで出してください</div>
+      <% @topics.each.with_index(1) do |topic,i|%>
+        <div class="topic">
+          <div class="num"><%= "#{i}." %></div>
+          <div class="topic-name">
+            <%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}"  %>
+        
+          </div>  
+        </div>   
     <% end %>  
+    </div>
   </div>
   <div class="topic-space">
     <div class ="new_topic">

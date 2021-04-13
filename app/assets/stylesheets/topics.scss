@@ -10,13 +10,24 @@
   color: #666;
   font-size: 20px;
   margin:  0 20px 20px 0;
+  padding-top: 90px;
   border-bottom: 2px solid #00608d;
   display: inline-block;
 }
 
 .topics{
+  height: 450px;
+  width: 100%;
   margin: 20px 30px;
-
+  text-align: center;
+  background-image: image-url("paper-3204064_1280.jpg");
+  background-size: cover;
+  
+}
+.topics-img{
+  background-color:rgba(250,250,250, 0.3);
+  height: 100%;
+  width:100%;
 }
 
 .num{
@@ -28,6 +39,7 @@
 .topic {
   display: flex;
   margin-top: 5px;
+  justify-content: center;
   
 }
 
@@ -68,13 +80,19 @@
   border-radius: 10px;
 
 }
+.form-submit:hover{
+  color: #0073a8;
+}
 
 .topic-space{
   display: flex;
+  justify-content: space-around;
+
 }
 
 .dice{
-  margin-left: 60px;
+  margin: 40px;
+  
   text-align: center;
   color: #666;
   font-size: 18px;
