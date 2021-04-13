@@ -40,14 +40,35 @@
 }
 
 .new_topic{
-  background-color: cadetblue;
+  
   margin: 50px 30px;
 }
-.form_input{
+.form-memo{
   color: #666;
   font-size: 18px;
   margin-bottom: 10px;
 }
 
+.input-form-t{
+  font-size: 15px;
+  padding: 5px 10px;
+  border: 2px solid #fcc800;
+  border-radius: 10px;
+  width: 400px;
+}
 
+.form-submit{
+  margin: 30px 20px;
+  width: 80px;
+  border: 2px solid #0073a8;
+  background-color: white;
+  color: #666;
+  padding: 5px 15px;
+  font-size: 15px;
+  border-radius: 10px;
 
+}
+
+.dice{
+  
+}
