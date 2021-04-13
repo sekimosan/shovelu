@@ -13,19 +13,21 @@
       </div>   
     <% end %>  
   </div>
-  <div class ="new_topic">
-    <%= form_with model: [@room,@topic], class: "form-t", local: true do |f| %>
-      <%= render "shared/error_messages", model: f.object %>
-      <div class="form_input">
-          <div class="form-memo"><%= f.label  "どんなことを話したいですか？" %></div>
-          <div class="input-form"><%= f.text_field :title,placeholder: "タイトルを入力してください　例:行ってみたい国",class: "input-form-t" %></div>
-          <div class="form-memo"><%= f.label "追加で説明があれば書いてください" %></div>
-          <div class="input-form"><%= f.text_area :memo,placeholder: "例:1人旅で２週間の滞在だとしたら何持っていく？" ,class:"input-form-t"%></div>
-      </div>
-      <%= f.submit "送信",class: "form-submit" %>
-    <% end %>  
+  <div class="topic-space">
+    <div class ="new_topic">
+      <%= form_with model: [@room,@topic], class: "form-t", local: true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <div class="form_input">
+            <div class="form-memo"><%= f.label  "どんなことを話したいですか？" %></div>
+            <div class="input-form"><%= f.text_field :title,placeholder: "タイトルを入力してください　例:行ってみたい国",class: "input-form-t" %></div>
+            <div class="form-memo"><%= f.label "追加で説明があれば書いてください" %></div>
+            <div class="input-form"><%= f.text_area :memo,placeholder: "例:1人旅で２週間の滞在だとしたら何持っていく？" ,class:"input-form-t"%></div>
+        </div>
+        <%= f.submit "送信",class: "form-submit" %>
+      <% end %>  
+    </div>  
     <div class="dice">
-      <input type="button" id="dice-btn" value="サイコロをふる">
+      <input type="button" id="dice-btn" value="サイコロをふる" class="dbtn">
       <div id="saikoro"></div>
     </div>
   </div>

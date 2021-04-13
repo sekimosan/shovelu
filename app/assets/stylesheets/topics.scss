@@ -58,7 +58,7 @@
 }
 
 .form-submit{
-  margin: 30px 20px;
+  margin: 30px 20px 20px 20px;
   width: 80px;
   border: 2px solid #0073a8;
   background-color: white;
@@ -69,6 +69,30 @@
 
 }
 
+.topic-space{
+  display: flex;
+}
+
 .dice{
+  margin-left: 60px;
+  text-align: center;
   
+}
+.dbtn{
+  border: 2px solid #00608d;
+  padding: 5px 15px;
+  background-color: white;
+  border-radius: 10px;
+  color: #00608d;
+  box-shadow: 1px 7px #0068b7;
+  margin-bottom: 20px;
+}
+.dbtn:active{
+  background-color: none;
+  position: relative;
+  top:7px;
+}
+#sikoro{
+  width: 300px;
+  height: 300px;
 }
