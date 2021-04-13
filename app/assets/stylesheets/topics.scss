@@ -46,7 +46,7 @@
 .form-memo{
   color: #666;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .input-form-t{
@@ -76,7 +76,12 @@
 .dice{
   margin-left: 60px;
   text-align: center;
+  color: #666;
+  font-size: 18px;
   
+}
+.dice p{
+  border-bottom: 2px solid #00608d;
 }
 .dbtn{
   border: 2px solid #00608d;
@@ -86,13 +91,10 @@
   color: #00608d;
   box-shadow: 1px 7px #0068b7;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 .dbtn:active{
   background-color: none;
   position: relative;
   top:7px;
-}
-#sikoro{
-  width: 300px;
-  height: 300px;
 }
