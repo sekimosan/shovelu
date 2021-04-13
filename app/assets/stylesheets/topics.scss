@@ -1,3 +1,53 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.yellow{
+  background-color: #ffedab;
+  color: #aeaeae;
+}
+
+.memo {
+  color: #666;
+  font-size: 20px;
+  margin:  0 20px 20px 0;
+  border-bottom: 2px solid #00608d;
+  display: inline-block;
+}
+
+.topics{
+  margin: 20px 30px;
+
+}
+
+.num{
+  font-size:25px;
+  color: #0073a8;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.topic {
+  display: flex;
+  margin-top: 5px;
+  
+}
+
+.topic-name a{
+  text-decoration: none;
+  color: #a4c1d7;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.new_topic{
+  background-color: cadetblue;
+  margin: 50px 30px;
+}
+.form_input{
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+
