@@ -13,13 +13,14 @@ class RoomsController < ApplicationController
       render :new  
     end  
   end
-  def destory
-    @room = Room.find(params[:id])
-    unless @room.users.include?(current_user)
+  def destroy
+    room = Room.find(params[:id])
+    unless room.users.include?(current_user)
       redirect_to root_path
     end
-    @room.destroy
+    room.destroy
     redirect_to root_path
+    
   end       
 
   private

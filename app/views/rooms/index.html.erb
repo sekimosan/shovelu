@@ -49,7 +49,7 @@
               <%= link_to "#{room.name}", room_topics_path(room.id) %>
             </div>
             <div class="room-delete">
-              <%= link_to "✖️","#" %>
+              <%= link_to "✖️",room_path(room) ,method: :delete %>
             </div>
           </div>  
         <% end %>  
