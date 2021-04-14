@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "rooms#index"
-  resources :users, only: [:edit,:update,:show,:destroy] do
+  resources :users, only: [:edit,:update,:show] do
     collection do
       get "search"
     end

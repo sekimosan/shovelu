@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user! 
   before_action :set_room
-  #before_action :move_to_top_page
+  before_action :move_to_top_page
   def index
     @topic = Topic.new 
     @topics = @room.topics.includes(:user)
@@ -19,7 +20,6 @@ class TopicsController < ApplicationController
     @topic = @room.topics.find(params[:id])
   end  
   def destroy
-    binding.pry
     @topic = @room.topics.find(params[:id])
     @topic.destroy
     redirect_to room_topics_path(@room)
@@ -33,7 +33,7 @@ class TopicsController < ApplicationController
     @room = Room.find(params[:room_id])
   end  
   def move_to_top_page
-    unless @topic.users.include?(current_user)
+    unless @room.users.include?(current_user)
       redirect_to root_path
     end  
   end  

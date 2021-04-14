@@ -38,22 +38,30 @@
         <%= link_to "ルームをつくる" ,new_room_path %>
       </div>  
     </div>  
-    <div class="title">今までのルーム一覧</div> 
-    <div class="rooms"> 
-        <% current_user.rooms.each do |room| %>
-          <div class="room">
-            <div class="room-date">
-              <%= room.created_at.to_s(:datetime_jp) %>
-            </div>
-            <div class="room-name">
-              <%= link_to "#{room.name}", room_topics_path(room.id) %>
-            </div>
-            <div class="room-delete">
-              <%= link_to "✖️",room_path(room) ,method: :delete %>
-            </div>
-          </div>  
-        <% end %>  
-    </div>
+    <% if user_signed_in? %>
+      <div class="title">今までのルーム一覧</div> 
+      <% if current_user.rooms.exists? %>
+        <div class="rooms"> 
+            <% current_user.rooms.each do |room| %>
+              <div class="room">
+                <div class="room-date">
+                  <%= room.created_at.to_s(:datetime_jp) %>
+                </div>
+                <div class="room-name">
+                  <%= link_to "#{room.name}", room_topics_path(room.id) %>
+                </div>
+                <div class="room-delete">
+                  <%= link_to "✖️",room_path(room) ,method: :delete %>
+                </div>
+              </div>  
+            <% end %>  
+        </div>
+      <% else %>
+        <div class="rooms">
+          まだルームがありません
+        </div> 
+      <% end %>   
+    <% end %>  
       
   </div>  
 </div>
