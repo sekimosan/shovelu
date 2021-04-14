@@ -9,7 +9,7 @@
         <%= @topic.memo %>
     </div>    
     <div class="topic-detail">
-        <%= link_to room_topic_path(@topic), method: :delete do %>
+        <%= link_to room_topic_path(@room,@topic), method: :delete do %>
           <i class="fas fa-trash-alt">削除</i>
         <% end %>
         <%= @topic.user.nickname %>
