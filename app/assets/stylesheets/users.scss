@@ -63,7 +63,7 @@
 .s-btn {
   text-decoration: none;
   color: #666;
-  font-size: 20px;
+  font-size: 15px;
   margin: 0 10px;
   :hover{
     color: #a3d6cc;
@@ -112,3 +112,20 @@
   margin: 30px 20px;
   text-align: center;
 }
+.move a{
+  text-decoration: none;
+  color: #0073a8;
+}
+.move a:hover{
+  color: #043c78;
+}
+
+.d input{
+  margin-top: 30px;
+  color: #0073a8;
+  border: 2px solid #043c78;
+}
+.d input:hover{
+  color: #043c78;
+}
+
