@@ -1,3 +1,162 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.yellow{
+  background-color: #ffedab;
+  color: #aeaeae;
+}
+
+.memo {
+  color: #666;
+  font-size: 20px;
+  margin:  0 20px 20px 0;
+  padding-top: 90px;
+  border-bottom: 2px solid #00608d;
+  display: inline-block;
+}
+
+.topics{
+  height: 450px;
+  width: 100%;
+  margin: 20px 30px;
+  text-align: center;
+  background-image: image-url("paper-3204064_1280.jpg");
+  background-size: cover;
+  
+}
+.topics-img{
+  background-color:rgba(250,250,250, 0.3);
+  height: 100%;
+  width:100%;
+}
+
+.num{
+  font-size:25px;
+  color: #0073a8;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.topic {
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+  
+}
+
+.topic-name a{
+  text-decoration: none;
+  color: #a4c1d7;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.new_topic{
+  
+  margin: 50px 30px;
+}
+.form-memo{
+  color: #666;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.input-form-t{
+  font-size: 15px;
+  padding: 5px 10px;
+  border: 2px solid #fcc800;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.form-submit{
+  margin: 30px 20px 20px 20px;
+  width: 80px;
+  border: 2px solid #0073a8;
+  background-color: white;
+  color: #666;
+  padding: 5px 15px;
+  font-size: 15px;
+  border-radius: 10px;
+
+}
+.form-submit:hover{
+  color: #0073a8;
+}
+
+.topic-space{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.dice{
+  margin: 40px;
+  
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  
+}
+.dice p{
+  border-bottom: 2px solid #00608d;
+}
+.dbtn{
+  border: 2px solid #00608d;
+  padding: 5px 15px;
+  background-color: white;
+  border-radius: 10px;
+  color: #00608d;
+  box-shadow: 1px 7px #0068b7;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.dbtn:active{
+  background-color: none;
+  position: relative;
+  top:7px;
+}
+
+.purple{
+  background-color: #d1bada;
+}
+
+.topic-show{
+  margin: 30px;
+  text-align: center;
+}
+
+.topic-memo{
+  color: #666;
+  font-size: 30px;
+  padding: 20px;
+
+}
+.topic-show p {
+  font-size: 25px;
+  color: #666;
+  border-bottom: 2px solid #0073a8;
+  display: inline-block;
+}
+.topic-detail{
+  margin: 0 20px;
+  color: #aeaeae;
+  
+}
+
+.move_to_index{
+  margin-top: 30px;
+  text-align: center;
+}
+.move_to_index a{
+  color: #d1bada;
+  border: 2px solid #915da3;
+  padding: 10px 30px;
+  border-radius: 10px;
+  
+}  
+
+.move_to_index a:hover{
+  color: #56256e;
+  
+}

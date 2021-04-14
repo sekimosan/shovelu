@@ -1,27 +1,40 @@
-<div class ="topics">
-  <h2>トピックを６つまで出してください</h2>
+<%= render "shared/header" %>
+<div class="main">
+  <div class="page-title yellow"><%= "#{@room.name}のお部屋"%></div>
   
-  <% @topics.each do |topic|%>
-    <ul>
-      <li><%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}" %></li>
-    </ul>    
-  <% end %>  
-</div>
-<div class ="new_topic">
-  <%= form_with model: [@room,@topic], class: "form", local: true do |f| %>
-    <%= render "shared/error_messages", model: f.object %>
-    <div class="form_input">
-      <ul>
-        <li><%= f.label  "どんなことを話したいですか？" %></li>
-        <li><%= f.text_field :title,placeholder: "タイトルを入力してください　例:行ってみたい国" %></li>
-        <li><%= f.label "追加で説明があれば書いてください" %>
-        <li><%= f.text_area :memo,placeholder: "例:1人旅で２週間の滞在だとしたら何持っていく？" %></li>
-      </ul>
+  <div class ="topics">
+    <div class="topics-img">
+      <div class="memo">トピックを６つまで出してください</div>
+      <% @topics.each.with_index(1) do |topic,i|%>
+        <div class="topic">
+          <div class="num"><%= "#{i}." %></div>
+          <div class="topic-name">
+            <%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}"  %>
+        
+          </div>  
+        </div>   
+    <% end %>  
     </div>
-    <%= f.submit "送信",class: "form-submit" %>
-  <% end %>  
-  <div class="dice">
-    <p><input type="button" id="dice-btn" value="サイコロをふる"></p>
-    <div id="saikoro"></div>
   </div>
-</div>
+  <div class="topic-space">
+    <div class ="new_topic">
+      <%= form_with model: [@room,@topic], class: "form-t", local: true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <div class="form_input">
+            <div class="form-memo"><%= f.label  "どんなことを話したいですか？" %></div>
+            <div class="input-form"><%= f.text_field :title,placeholder: "タイトルを入力してください　例:行ってみたい国",class: "input-form-t" %></div>
+            <div class="form-memo"><%= f.label "追加で説明があれば書いてください" %></div>
+            <div class="input-form"><%= f.text_area :memo,placeholder: "例:1人旅で２週間の滞在だとしたら何持っていく？" ,class:"input-form-t"%></div>
+        </div>
+        <%= f.submit "送信",class: "form-submit" %>
+      <% end %>  
+    </div>  
+    <div class="dice">
+      <p><i class="fas fa-user-friends"></i>だれが話しますか？</p>
+      <p><i class="fas fa-comments"></i>どのトピックを話しますか？</p>
+      <p><i class="fas fa-dice-d6"></i>サイコロを振って決めましょう</p>
+      <input type="button" id="dice-btn" value="サイコロをふる" class="dbtn">
+      <div id="saikoro"></div>
+    </div>
+  </div>
+</div>  
