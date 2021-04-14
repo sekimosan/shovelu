@@ -9,6 +9,9 @@
         <%= @topic.memo %>
     </div>    
     <div class="topic-detail">
+        <%= link_to room_topic_path(@room,@topic), method: :delete do %>
+          <i class="fas fa-trash-alt">削除</i>
+        <% end %>
         <%= @topic.user.nickname %>
         <%= @topic.created_at.to_s(:datetime_jp) %>
     </div>

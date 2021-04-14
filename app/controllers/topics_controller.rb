@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user! 
   before_action :set_room
   before_action :move_to_top_page
   def index
@@ -13,13 +14,14 @@ class TopicsController < ApplicationController
     else 
       @topics = @room.topics.includes(:user)
       render :index
-    end  
+    end
   end
   def show
     @topic = @room.topics.find(params[:id])
   end  
   def destroy
-    @topic = @room.topic(params[:id]).destroy
+    @topic = @room.topics.find(params[:id])
+    @topic.destroy
     redirect_to room_topics_path(@room)
   end   
   
