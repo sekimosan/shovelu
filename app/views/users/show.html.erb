@@ -12,7 +12,7 @@
     </div>
     <% if user_signed_in? && current_user.id == @user.id %>
       <div class="user-show">
-        <%= link_to "#", class:"s-btn"  do%>
+        <%= link_to edit_user_registration_path, class:"s-btn"  do%>
           <i class="fas fa-user-edit">編集</i> 
         <% end %>
       </div>
