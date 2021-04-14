@@ -1,13 +1,24 @@
-<div class="topic">
-  <div class="topic_title">
-    <ul>
-      <li><%= @topic.title %></li>
-      <li><%= @topic.memo %></li>
-      <li><%= @topic.user.nickname %></li>
-      <li><%= @topic.created_at.to_s(:datetime_jp) %></li>
-    </ul>  
+<%= render "shared/header" %>
+<div class="main">
+  <h1 class="page-title purple">
+    <%= "#{@topic.title}の話"%>
+  </h1>  
+  <div class="topic-show">
+    <p><i class="fas fa-search-plus"></i>どんな内容の話ですか？</p>
+    <div class="topic-memo">
+        <%= @topic.memo %>
+    </div>    
+    <div class="topic-detail">
+        <%= @topic.user.nickname %>
+        <%= @topic.created_at.to_s(:datetime_jp) %>
+    </div>
   </div>
-</div>
-<div class="move_to_index">
-  <%= link_to "戻る",room_topics_path(@room)%>
-</div>  
+  <div class="log-area">
+   
+  </div>
+  <div class="move_to_index">
+    <%= link_to room_topics_path(@room) do %>
+      <i class="fas fa-door-open">ルームに戻る</i>
+    <% end %>  
+  </div> 
+</div>   
