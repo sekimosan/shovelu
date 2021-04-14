@@ -1,60 +1,85 @@
-<h2>Sign up</h2>
+
+<h2 class="title">新規ユーザー登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
-    <%= f.label :nickname %><br />
-    <%= "10文字以内で入力してください"%><br />
-    <%= f.text_field :nickname, autofocus: true %>
+    <div class="devise-title">
+      <%= f.label :nickname ,class:"devise-title"%>
+    </div>  
+    <div class="devise-memo">*10文字以内で入力</div>
+    <div class="devise-text">
+      <%= f.text_field :nickname, autofocus: true %>
+    </div>  
   </div>
   
   <div class="field">
-    <%= f.label :user_name %><br />
-    <%= "半角英数字混合　８文字〜12文字" %><br />
-    <%= f.text_field :user_name %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= "アイコンを決めてください" %><br />
-    <%#= 画像を送るフィールドにする %>
+    <div class="devise-title">
+      <%= f.label :user_name %>
+    </div>  
+    <div class="devise-memo"> *半角英数字混合　８文字〜12文字 </div>
+    <div class="devise-text">
+      <%= f.text_field :user_name %>
+    </div>  
   </div>
 
   <div class="field">
-    <%= f.label :gender %><br />
+    <div class="devise-title">
+      <%= f.label :gender %>
+    </div>  
     <%= f.collection_select(:gender_id, Gender.all, :id, :name, {include_blank: "--"}, {class:"gender-select"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :age %><br />
+    <div class="devise-title">
+      <%= f.label :age %>
+    </div>
     <%= f.collection_select(:age_id, Age.all, :id, :name, {include_blank: "--"},{class:"Age-select"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <div class="devise-title">
+      <%= f.label :email %>
+    </div>  
+    <div class="devise-text">
+      <%= f.email_field :email, autocomplete: "email"%>
+    </div>  
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <div class="devise-title">
+      <%= f.label :password  %> 
+    </div>  
+    <div class="devise-memo">
+      *パスワードは６文字以上
+    </div>  
+    <div class="devise-text">
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>  
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="devise-title">
+      <%= f.label :password_confirmation %>
+    </div>
+    <div class="devise-text">  
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>  
   </div>
 
   <div class="field">
-    <%= f.label :profile %><br />
-    <%= f.text_field :profile %>
+    <div class="devise-title">
+      <%= f.label :profile %>
+    </div>  
+    <div class="devise-text">
+      <%= f.text_field :profile %>
+    </div>  
   </div>  
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div class="move">
+  <%= render "devise/shared/links" %>
+</div>  
