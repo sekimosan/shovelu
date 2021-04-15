@@ -1,5 +1,7 @@
 <%= render "shared/header" %>
 <div class="main">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <h1 class="page-title green"><%= "#{@user.user_name}さんのページ" %></h1>
   <div class="your-page">
     <div class="user-picture">
@@ -12,9 +14,12 @@
     </div>
     <% if user_signed_in? && current_user.id == @user.id %>
       <div class="user-show">
-        <%= link_to "#", class:"s-btn"  do%>
-          <i class="fas fa-user-edit">編集</i> 
+        <%= link_to edit_user_registration_path, class:"s-btn"  do%>
+          <i class="fas fa-user-cog">アカウント情報変更</i>
         <% end %>
+        <%= link_to  detail_edit_path, class:"s-btn" do %>
+          <i class="fas fa-user-edit">プロフィールの編集</i>
+        <% end %>  
       </div>
     <% elsif user_signed_in? && current_user.id != @user.id %>  
       <% if current_user.following?(user) %>

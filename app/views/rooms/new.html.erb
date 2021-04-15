@@ -1,6 +1,7 @@
 <%= render "shared/header" %>
 <div class='main'>
-  
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <h1 class="page-title blue">新規ルーム作成</h1>
   <div class="form">
     <%= form_with model: @room, local: true do |f| %>

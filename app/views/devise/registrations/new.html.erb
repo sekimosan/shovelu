@@ -1,6 +1,6 @@
-
 <h2 class="title">新規ユーザー登録</h2>
-
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
@@ -72,7 +72,7 @@
       <%= f.label :profile %>
     </div>  
     <div class="devise-text">
-      <%= f.text_field :profile %>
+      <%= f.text_area :profile %>
     </div>  
   </div>  
 
