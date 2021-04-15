@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :gender,:age
   end  
   validates :profile, length: {maximum: 200}
-  has_one_attached :image
+  has_one_attached :icon
   has_many :user_rooms
   has_many :rooms, through: :user_rooms
   has_many :follower, class_name: "Relationship",foreign_key: "follower_id", dependent: :destroy
