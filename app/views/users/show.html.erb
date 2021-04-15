@@ -7,6 +7,8 @@
     <div class="user-picture">
       <% if @user.icon.attached? %>
         <%= image_tag @user.icon.variant(resize: "150x150"), class: 'user-icon' %>
+      <% else%>  
+        <%= image_tag "shouchu.png",class:"user-icon" %>
       <% end %>  
     </div>
     <div class="user-show name">
