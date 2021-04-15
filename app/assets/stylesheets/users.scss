@@ -22,9 +22,8 @@
 .user-picture{
   height: 150px;
   width: 150px;
-  border: 2px solid #ea5532;
-  background-image: image-url("greek-vase.png");
-  background-size: cover;
+  border: 2px solid #aeaeae;
+
   margin: 0 auto;
 }
 .follow-btn {
@@ -73,6 +72,14 @@
 .follow {
   border-bottom: 2px solid #0673a8;
 }
+i {
+  margin-left: 5px;
+
+}
+.user-icon{
+  width:150px;
+  height:150px;
+}
 
 
 // deviseのページ修正
@@ -92,6 +99,7 @@
   border: 2px solid #ffc800;
   border-radius: 10px;
   color: #666;
+  
   
 }
 .actions {
@@ -137,3 +145,4 @@
   color: #666;
 
 }
+//
