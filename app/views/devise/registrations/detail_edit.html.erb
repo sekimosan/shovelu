@@ -1,0 +1,51 @@
+<h2> <% resource_name.to_s.humanize %></h2>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<h1 class="title">プロフィール編集</h1>
+<%= form_for current_user, url: {action: 'detail_update'} do |f| %>
+  <%= render "devise/shared/error_messages", resource: current_user %>
+
+  <div class="field">
+    <div class="devise-title">
+      <%= f.label :nickname %>
+    </div>
+    <div class="devise-text">
+      <%= f.text_field :nickname, autofocus: true, autocomplete:true %>
+    </div>  
+  </div>
+
+  <div class="field">
+    <div class="devise-title">
+      <%= f.label :gender %>
+    </div> 
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {include_blank: "--"}, {class:"gender-select"}) %>
+  </div>
+  <div class="field">
+    <div class="devise-title">
+      <%= f.label :age %>
+    </div> 
+    <%= f.collection_select(:age_id, Age.all, :id, :name, {include_blank: "--"},{class:"Age-select"}) %>
+  </div>
+
+  <div class="field">
+    <div class="devise-title">
+      <%= f.label :profile %>
+    </div>  
+    <div class="devise-text">
+      <%= f.text_area :profile %>
+    </div>  
+  </div>
+ 
+
+  <div class="actions">
+    <%= f.submit "変更する" %>
+  </div>
+<% end %>
+
+<div class="move">
+  <%= link_to  :back  do %>
+    <i class="fas fa-door-open">戻る</i>
+  <% end %>  
+</div>  
+  
