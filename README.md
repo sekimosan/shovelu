@@ -145,3 +145,7 @@
 - belongs_to :user
 - belongs_to :topic
 - belongs_to :room
+
+## ER図
+
+[![Image from Gyazo](https://i.gyazo.com/d6e0c1f2c085b86c6b0b123cc9593e39.png)](https://gyazo.com/d6e0c1f2c085b86c6b0b123cc9593e39)
