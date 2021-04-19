@@ -52,6 +52,19 @@
 ## URL
 http://35.72.188.223/
 
+テスト用アカウント  
+- テストユーザー１  
+メールアドレス　aaaa@gmail.com  
+パスワード　1a2s3d  
+
+- テストユーザー２  
+メールアドレス　bbbb@gmail.com  
+パスワード　1a2s3d  
+
+トピック作成後はルームを削除していただけると幸いです。
+
+
+
 ## 各機能動画 おおまかな内容のみ
  1. 新規登録/ログイン
 [![Image from Gyazo](https://i.gyazo.com/d6a417856200a822bad81d56276af4ee.gif)](https://gyazo.com/d6a417856200a822bad81d56276af4ee)
