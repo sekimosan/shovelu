@@ -15,7 +15,7 @@
   display: inline-block;
 }
 
-.topics{
+.topics-index{
   height: 450px;
   width: 100%;
   margin: 20px 30px;
@@ -29,6 +29,9 @@
   height: 100%;
   width:100%;
 }
+.topics{
+  height: calc(100% - 122px);
+}
 
 .num{
   font-size:25px;
@@ -40,6 +43,7 @@
   display: flex;
   margin-top: 5px;
   justify-content: center;
+
   
 }
 
@@ -166,4 +170,19 @@
 .move_to_index a:hover{
   color: #56256e;
   
+}
+
+@media screen and (max-width: 500px){
+  .topic-space{
+    display: block;
+  }
+  .topic-name a{
+    font-size: 20px;
+  }
+  .num {
+    font-size:20px;
+  }
+  .memo{
+    padding-top: 50px;
+  }
 }

@@ -4,18 +4,20 @@
   <p class="alert"><%= alert %></p>
   <div class="page-title yellow"><%= "#{@room.name}のお部屋"%></div>
   
-  <div class ="topics">
+  <div class ="topics-index">
     <div class="topics-img">
       <div class="memo">トピックを６つまで出してください</div>
-      <% @topics.each.with_index(1) do |topic,i|%>
-        <div class="topic">
-          <div class="num"><%= "#{i}." %></div>
-          <div class="topic-name">
-            <%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}"  %>
-        
-          </div>  
-        </div>   
-    <% end %>  
+        <div class="topics">
+          <% @topics.each.with_index(1) do |topic,i|%>
+            <div class="topic">
+              <div class="num"><%= "#{i}." %></div>
+              <div class="topic-name">
+                <%= link_to "#{topic.title}", "/rooms/#{@room.id}/topics/#{topic.id}"  %>
+              </div>  
+            </div>  
+          
+          <% end %>
+        </div>    
     </div>
   </div>
   <div class="topic-space">
@@ -24,7 +26,7 @@
         <%= render "shared/error_messages", model: f.object %>
         <div class="form_input">
             <div class="form-memo"><%= f.label  "どんなことを話したいですか？" %></div>
-            <div class="input-form"><%= f.text_field :title,placeholder: "タイトルを入力してください　例:行ってみたい国",class: "input-form-t" %></div>
+            <div class="input-form"><%= f.text_field :title,placeholder: "20字以内でタイトルを入力してください",maxlength: "20",class: "input-form-t" %></div>
             <div class="form-memo"><%= f.label "追加で説明があれば書いてください" %></div>
             <div class="input-form"><%= f.text_area :memo,placeholder: "例:1人旅で２週間の滞在だとしたら何持っていく？" ,class:"input-form-t"%></div>
         </div>
