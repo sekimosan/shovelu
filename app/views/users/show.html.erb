@@ -47,9 +47,9 @@
   </div>
   <div class="number">
     <div class="follows">
-        <% @user.following_user.where.not(id: current_user.id).each do |user| %>
+        <% @user.following_user.each do |user| %>
           <div class="follow">
-            <% if current_user.following?(user) && current_user.follower?(user) %>
+            <% if @user.following?(user) && @user.follower?(user) %>
                <i class="fas fa-hands-helping"></i>
             <% end %>
             <%= link_to user_path(user) ,class:"s-btn" do %>
@@ -60,9 +60,9 @@
         <% end %>
     </div>  
     <div class="follows">  
-        <% @user.follower_user.where.not(id: current_user.id).each do |user| %>
+        <% @user.follower_user.each do |user| %>
           <div class="follow">
-            <% if current_user.following?(user) && current_user.follower?(user) %>
+            <% if @user.following?(user) && @user.follower?(user) %>
                <i class="fas fa-hands-helping"></i>
             <% end %>
             <%= link_to user_path(user),class: "s-btn"  do %>
