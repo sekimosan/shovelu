@@ -8,6 +8,7 @@ class User < ApplicationRecord
     validates :user_name, uniqueness: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i },length: {in: 8..12}
     validates :gender,:age
   end  
+  validates :password,format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
   validates :profile, length: {maximum: 200}
   has_one_attached :icon
   has_many :user_rooms
