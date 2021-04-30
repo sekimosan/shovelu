@@ -26,6 +26,46 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include "Nickname is too long (maximum is 10 characters)"
       end
+      it "emailが空である" do
+        @user.email = " "
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Email can't be blank"
+      end
+      it "emailが重複している" do
+        @user.save
+        another_user = FactoryBot.build(:user)
+        another_user.email = @user.email
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include "Email has already been taken"
+      end
+      it "passwordが5文字以下である" do
+        @user.password = "abc12"
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Password is too short (minimum is 6 characters)"
+      end
+      it "passwordが空である" do
+        @user.password = " "
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Password can't be blank"
+      end
+      it "passwordが全角である" do
+        @user.password = "アイウエオ１２３"
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Password is invalid"
+      end
+      it "passwordが数字のみである" do
+        @user.password = "1234567"
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include  "Password is invalid"
+      end
+      it "passwordが英字のみである" do
+        @user.password = "abcdefgh"
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Password is invalid"
+      end
       it "user_nameが７文字以下である" do
         @user.user_name = "aaa1111"
         @user.valid?
