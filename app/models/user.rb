@@ -18,7 +18,7 @@ class User < ApplicationRecord
   has_many :follower_user, through: :followed, source: :follower
   has_many :topics
 
-  def self.search(search)
+  def self.search(search) 
     unless search == " "
       User.where(user_name: search)
     end
