@@ -3,13 +3,12 @@ class Topic < ApplicationRecord
   belongs_to :room
 
   validates :title, presence: true
-  validate :room_topics_up_to_6
+  validate :room_topics_up_to_six
 
   private
-  TOPIC_MAX = 6
-  def room_topics_up_to_6
-    if self.room && self.room.topics.count > TOPIC_MAX
-      errors.add(:topic,"topics are up to 6")
+  def room_topics_up_to_six
+    if self.room && self.room.topics.count >= 6
+      errors.add(:topic,"トピックは６つまでです")
     end
   end    
 
