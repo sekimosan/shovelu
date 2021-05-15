@@ -147,8 +147,8 @@ http://35.72.188.223/
 ## commentsテーブル
 
 | Column                 | Type        | Option                           |
-| ---------------------- | ----------- | -------------------------------- |
-| comment                | text        |  null: false                     | 
+| ---------------------- | ----------- | ---------------------------------|
+| content                | text        |  null: false                     | 
 | topic                  | references  |  foreign_key: true               |
 | user                   | references  |  foreign_key: true               |
 | room                   | references  |  foreign_key: true               |
