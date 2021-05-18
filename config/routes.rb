@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   resources :rooms, only: [:index,:new,:create,:show,:destroy] do
     resources :topics, only: [:index,:create,:destroy,:show] do
-      resources :comments, only: [:index, :create, :destroy]
+      resources :comments, only: [:create, :destroy]
     end
   end
   

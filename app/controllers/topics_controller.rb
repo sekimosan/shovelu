@@ -18,6 +18,8 @@ class TopicsController < ApplicationController
   end
   def show
     @topic = @room.topics.find(params[:id])
+    @comments = @topic.comments.includes(:user)
+    @comment = @topic.comments.new
   end  
   def destroy
     @topic = @room.topics.find(params[:id])
