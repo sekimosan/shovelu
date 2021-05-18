@@ -1,3 +1,41 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.log-area {
+  margin: 50px 30px;
+}
+.comments{
+  margin: 10px 20px;
+  border: 2px solid #915da3;
+  padding: 10px;
+  border-radius: 10px;
+  color: #666;
+  
+}
+
+.comment-by{
+  color: #aeaeae;
+  font-size: 10px;
+}
+.comment-by a {
+  color: #aeaeae;
+  margin-right: 5px;
+  text-decoration: none;
+}
+.comment-by a:hover {
+  color: #915da3;
+}
+.input-c {
+  margin: 10px 20px 0px 20px;
+}
+.new-comment {
+  text-align: center;
+  margin-top:50px;
+}
+.new-comment textarea {
+  border: 2px solid #0073a8;
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+}
