@@ -18,16 +18,37 @@
         <%= @topic.created_at.to_s(:datetime_jp) %>
     </div>
   </div>
-  <div class="log-area">
-    <div class="comments">
-      <div class="comment">
-        <%# コメントの内容とコメントの日付　名前　%>
-      </div>
-    </div>
-  </div>
   <div class="move_to_index">
     <%= link_to room_topics_path(@room) do %>
       <i class="fas fa-door-open">ルームに戻る</i>
     <% end %>  
   </div> 
+  <div class="log-area">
+    <div class="comments-content">
+      <% @comments.each do |comment| %>
+        <div class="comments">
+          <div class="comment-by">
+            <%= link_to room_topic_comment_path(@room,@topic,comment), method: :delete do %>
+              <i class="fas fa-trash-alt">削除</i>
+            <% end %>
+            <%= comment.user.nickname %>
+            <%= comment.created_at.to_s(:datetime_jp) %>
+          </div>  
+          <div class="comment-text">
+            <%= comment.content %>
+          </div>
+          
+        </div>  
+      <% end %>
+      <div class="new-comment">
+        <%# コメントの内容とコメントの日付　名前　%>
+        <%= form_with model: [@room,@topic,@comment],class:"form-c", loval: true do |f| %>
+          <%= render "shared/error_messages", model: f.object %>
+          <div class="input-c"><%= f.text_area :content,placeholder: "コメントを入力してください" %></div>
+          <%= f.submit "送信",class: "form-submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>   

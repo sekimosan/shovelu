@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   post 'follow/:id' => 'relationships#follow', as: 'follow'
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   resources :rooms, only: [:index,:new,:create,:show,:destroy] do
-    resources :topics, only: [:index,:create,:destroy,:show]
+    resources :topics, only: [:index,:create,:destroy,:show] do
+      resources :comments, only: [:create, :destroy]
+    end
   end
   
 end

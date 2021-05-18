@@ -45,9 +45,6 @@
   - ランダムによってゲーム感覚の気軽さを持たせるため
 - コメントログ機能
   - 議事録や感想を残すため
-## 今後の実装予定
-- コメントログ機能
-- トピックの非同期通信化　(Ajaxを使用)
 
 ## URL
 http://35.72.188.223/
@@ -147,8 +144,8 @@ http://35.72.188.223/
 ## commentsテーブル
 
 | Column                 | Type        | Option                           |
-| ---------------------- | ----------- | -------------------------------- |
-| comment                | text        |  null: false                     | 
+| ---------------------- | ----------- | ---------------------------------|
+| content                | text        |  null: false                     | 
 | topic                  | references  |  foreign_key: true               |
 | user                   | references  |  foreign_key: true               |
 | room                   | references  |  foreign_key: true               |
