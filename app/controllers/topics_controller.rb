@@ -23,11 +23,12 @@ class TopicsController < ApplicationController
   end  
   def destroy
     @topic = @room.topics.find(params[:id])
-    @topic.destroy
+    @topic.destroy!
     redirect_to room_topics_path(@room)
   end   
   
   private
+  
   def topic_params
     params.require(:topic).permit(:title,:memo,:room_id).merge(user_id: current_user.id)
   end  

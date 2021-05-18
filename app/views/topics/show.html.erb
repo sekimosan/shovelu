@@ -28,7 +28,7 @@
       <% @comments.each do |comment| %>
         <div class="comments">
           <div class="comment-by">
-            <%= link_to "#", method: :delete do %>
+            <%= link_to room_topic_comment_path(@room,@topic,comment), method: :delete do %>
               <i class="fas fa-trash-alt">削除</i>
             <% end %>
             <%= comment.user.nickname %>
