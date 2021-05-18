@@ -9,7 +9,7 @@ class Topic < ApplicationRecord
   private
   def room_topics_up_to_six
     if self.room && self.room.topics.count >= 6
-      errors.add(:topic,"トピックは６つまでです")
+      errors.add(:topic,"は６つまでです")
     end
   end    
 
