@@ -20,8 +20,13 @@
   </div>
   <div class="log-area">
     <div class="comments">
-      <div class="comment">
+      <div class="new-comment">
         <%# コメントの内容とコメントの日付　名前　%>
+        <%= form_with model: [@room,@topic,@comment],class:"form-c", loval: true do |f| %>
+          <%= render "shared/error_messages", model: f.object %>
+          <div class="input-c"><%= f.text_area :content,placeholder: "コメントを入力してください" %></div>
+          <%= f.submit "送信",class: "form-submit" %>
+        <% end %>
       </div>
     </div>
   </div>
